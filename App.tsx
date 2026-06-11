@@ -1,9 +1,5 @@
-import { Text } from "react-native";
+import { Login } from "./src/screens/Login";
 
 export default function App() {
-  return (
-    <>
-      <Text>Salve</Text>
-    </>
-  );
+  return <Login />;
 }
