@@ -11,7 +11,7 @@ export const Routes = () => {
       {screen === "home" ? (
         <Home irParaAuthentication={() => setScreen("auth")} />
       ) : (
-        <Authentication />
+        <Authentication irParaHome={() => setScreen("home")} />
       )}
     </TransitionScreen>
   );
