@@ -24,7 +24,7 @@ export const Home = ({ irParaAuthentication }: any) => {
                 </ContainerImage>
 
                 <ViewArea>
-                  <Title>Millions of Songs. Free on Spotify.</Title>
+                  <Title>{"Millions of Songs.\nFree on Spotify."}</Title>
                 </ViewArea>
 
                 <ListButton action={irParaAuthentication} />
