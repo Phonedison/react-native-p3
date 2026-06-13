@@ -11,15 +11,16 @@ type Props = {
 };
 
 export const ViewArea = ({ className, children }: Props) => {
-  const style = className ? styles[className] : undefined;
-  return <View style={style}>{children}</View>;
+  return (
+    <View style={className ? styles[className] : undefined}>{children}</View>
+  );
 };
 
-export const SafeArea = ({ className, children }: Props) => {
+export const SafeArea = ({ children }: Props) => {
   return (
     <SafeAreaView
-      style={className ? styles[className] : undefined}
-      edges={["left", "right"]}
+      style={styles.SafeAreaContainer}
+      edges={["left", "right", "bottom", "top"]}
     >
       {children}
     </SafeAreaView>
@@ -32,7 +33,7 @@ export const ContainerImage = ({ children }: Props) => {
 
 export const ContainerTitle = ({ text }: Props) => {
   return (
-    <ViewArea className="viewContainerText">
+    <ViewArea>
       <Title>{text}</Title>
     </ViewArea>
   );
