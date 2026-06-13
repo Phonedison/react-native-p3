@@ -11,8 +11,8 @@ export const styles = StyleSheet.create({
   viewContainer: {
     gap: space,
     justifyContent: align,
-    alignItems: align,
-    width: "100%",
+    alignItems: "stretch",
+    padding: space,
   },
   viewContainerImage: {
     alignItems: align,

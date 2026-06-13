@@ -13,15 +13,18 @@ export const styles = (variant?: "primary" | "secondary") =>
       justifyContent: "space-evenly",
       alignItems: "center",
       flexDirection: "row",
+      width: "100%",
     },
     primary: {
       backgroundColor: green,
       borderColor: green,
       color: black,
+      width: "100%",
     },
     secondary: {
       backgroundColor: black,
       borderColor: "#ffffff42",
+      width: "100%",
     },
     text: {
       fontSize: 16,

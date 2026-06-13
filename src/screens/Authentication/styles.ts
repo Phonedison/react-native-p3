@@ -6,4 +6,9 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     padding: 20,
   },
+  containerButton: {
+    gap: 16,
+    alignContent: "stretch",
+    width: "100%",
+  },
 });
