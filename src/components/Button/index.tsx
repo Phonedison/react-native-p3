@@ -12,9 +12,10 @@ type Props = {
   variant?: ButtonVariant;
   children: string;
   icon?: ButtonIcon;
+  action?: () => void;
 };
 
-export const Button = ({ variant, children, icon }: Props) => {
+export const Button = ({ variant, children, icon, action }: Props) => {
   const variantStyle =
     variant === "primary"
       ? styles("primary").primary
@@ -24,6 +25,7 @@ export const Button = ({ variant, children, icon }: Props) => {
     <TouchableOpacity
       activeOpacity={0.7}
       style={[styles(variant).container, variantStyle]}
+      onPress={action}
     >
       {icon && <ImgButton logotipo={icon} />}
 
@@ -32,9 +34,9 @@ export const Button = ({ variant, children, icon }: Props) => {
   );
 };
 
-export const ListButton = () => (
+export const ListButton = ({ action }: any) => (
   <ViewArea className="viewContainerButton">
-    <Button variant="primary" children="Sign up Free" />
+    <Button variant="primary" children="Sign up Free" action={action} />
     <Button variant="secondary" children="Continue with phone number" />
     <Button variant="secondary" children="Continue with Google" icon="gmail" />
     <Button

@@ -7,13 +7,13 @@ import { Title } from "../../components/Text";
 import { ContainerImage, SafeArea, ViewArea } from "../../components/View";
 import { styles } from "./styles";
 
-export const Login = () => {
+export const Home = ({ irParaAuthentication }: any) => {
   return (
     <>
-      <StatusBar style="light" />
+      <StatusBar style="inverted" />
       <SafeAreaProvider>
-        <SafeArea className={"SafeAreaContainer"}>
-          <BackgroundImage className="background">
+        <SafeArea>
+          <BackgroundImage>
             <LinearGradient
               colors={["transparent", "rgba(0,0,0,1)", "rgba(0,0,0,0.8)"]}
               style={styles.gradient}
@@ -23,11 +23,11 @@ export const Login = () => {
                   <Spotity />
                 </ContainerImage>
 
-                <ViewArea className="viewContainerText">
+                <ViewArea>
                   <Title>Millions of Songs. Free on Spotify.</Title>
                 </ViewArea>
 
-                <ListButton />
+                <ListButton action={irParaAuthentication} />
               </ViewArea>
             </LinearGradient>
           </BackgroundImage>
