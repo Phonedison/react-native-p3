@@ -1,38 +1,32 @@
 import { useEffect, useRef } from "react";
-import { Animated, Dimensions } from "react-native";
+import { Animated, View } from "react-native";
+import { styles } from "./styles";
 
 export const TransitionScreen = ({ children }: any) => {
-  const screenHeight = Dimensions.get("window").height;
+  /* Estilização dos elementos */
+  const scale = useRef(new Animated.Value(0.8)).current;
+  const opacity = useRef(new Animated.Value(0)).current;
 
-  const translateY = useRef(new Animated.Value(screenHeight)).current;
-  const opacity = useRef(new Animated.Value(0.2)).current;
+  /* Parametros de tempo */
+  const timing = {
+    toValue: 1,
+    duration: 900,
+    useNativeDriver: true,
+  };
 
+  const styled = { flex: 1, opacity, transform: [{ scale }] };
   useEffect(() => {
     Animated.parallel([
-      Animated.timing(translateY, {
-        toValue: 0,
-        duration: 600,
-        useNativeDriver: true,
-      }),
-
-      Animated.timing(opacity, {
-        toValue: 1,
-        duration: 300,
-        useNativeDriver: true,
-      }),
+      Animated.timing(scale, timing),
+      Animated.timing(opacity, timing),
     ]).start();
   }, []);
 
   return (
-    <Animated.View
-      style={{
-        flex: 1,
-        backgroundColor: "#000",
-        opacity,
-        transform: [{ translateY }],
-      }}
-    >
-      {children}
-    </Animated.View>
+    <View style={styles.background}>
+      <Animated.View style={[styles.container, { opacity }]}>
+        {children}
+      </Animated.View>
+    </View>
   );
 };
