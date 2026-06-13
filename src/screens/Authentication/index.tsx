@@ -1,13 +1,14 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-import { TextInput } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Button } from "../../components/Button";
 import { Spotity } from "../../components/Image";
-import { Title } from "../../components/Text";
+import { Input } from "../../components/Input";
+import { SubTitle } from "../../components/Text";
 import { ContainerImage, SafeArea, ViewArea } from "../../components/View";
 import { styles } from "./styles";
 
-export const Authentication = () => {
+export const Authentication = ({ irParaHome }: any) => {
   return (
     <>
       <StatusBar style="light" />
@@ -23,14 +24,25 @@ export const Authentication = () => {
                   <Spotity />
                 </ContainerImage>
 
-                <ViewArea className="viewContainerText">
-                  <Title>Log in to continue.</Title>
+                <ViewArea>
+                  <SubTitle>Log in to continue.</SubTitle>
                 </ViewArea>
               </ViewArea>
 
-              <ViewArea className="viewContainerText">
-                <TextInput placeholder="text" style={{ color: "white" }} />
-                <TextInput />
+              <ViewArea>
+                <ViewArea className="viewContainer">
+                  <Input text="Email ou username" variant="text" />
+                  <Input text="digite a senha" variant="password" />
+                </ViewArea>
+
+                <ViewArea className="viewContainer">
+                  <Button variant="primary" children="Logar" />
+                  <Button
+                    variant="secondary"
+                    children="Cancelar"
+                    action={irParaHome}
+                  />
+                </ViewArea>
               </ViewArea>
             </ViewArea>
           </LinearGradient>
