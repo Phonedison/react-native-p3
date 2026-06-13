@@ -1,5 +1,8 @@
 import { StyleSheet } from "react-native";
 
+const green = "#00D461";
+const black = "#0A0A0A";
+
 export const styles = (variant?: "primary" | "secondary") =>
   StyleSheet.create({
     container: {
@@ -12,17 +15,17 @@ export const styles = (variant?: "primary" | "secondary") =>
       flexDirection: "row",
     },
     primary: {
-      backgroundColor: "#00D461",
-      borderColor: "#00D461",
-      color: "#0A0A0A",
+      backgroundColor: green,
+      borderColor: green,
+      color: black,
     },
     secondary: {
-      backgroundColor: "#0A0A0A",
+      backgroundColor: black,
       borderColor: "#ffffff42",
     },
     text: {
       fontSize: 16,
       fontWeight: "800",
-      color: variant === "secondary" ? "#fff" : "#0A0A0A",
+      color: variant === "secondary" ? "#fff" : black,
     },
   });
