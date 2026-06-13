@@ -3,8 +3,10 @@ import { TransitionScreen } from "../components/TransitionScreen";
 import { Authentication } from "../screens/Authentication";
 import { Home } from "../screens/Home";
 
+type typeScreen = "home" | "auth";
+
 export const Routes = () => {
-  const [screen, setScreen] = useState<"home" | "auth">("home");
+  const [screen, setScreen] = useState<typeScreen>("home");
 
   return (
     <TransitionScreen key={screen}>
